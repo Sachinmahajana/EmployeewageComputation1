@@ -5,20 +5,30 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Emplployeewage computation program");
-            // UC 1 EmployeeAttendence
-            int isPresent = 1;
+            // UC 2 EmployeeDailywage 
+            const int FULL_TIME = 1;
+            const int EMP_RATE_PER_HR = 20;
+            int empHrs = 0, empWage = 0;
             Random myObj = new Random();
             int empAttendence = myObj.Next(0, 2);
-
-            if (empAttendence == isPresent)
+            if (empAttendence == FULL_TIME)
             {
                 Console.WriteLine("Employee is Present");
+                empHrs = 8;
             }
             else
             {
                 Console.WriteLine("Employee is Absent");
+                empHrs = 0;
             }
+            empWage = empHrs * EMP_RATE_PER_HR;
+            Console.WriteLine("Employeewage {0} wage", empWage);
             Console.ReadLine();
         }
-    }
+     }
 }
+
+
+
+
+
