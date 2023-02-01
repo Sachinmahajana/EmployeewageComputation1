@@ -4,6 +4,11 @@
     {
         static void Main(string[] args)
         {
+            ComputeEmpWage();
+            Console.ReadLine();
+        }
+        public static void ComputeEmpWage()
+        {
             Console.WriteLine("Welcome to Emplployeewage computation program");
             // UC 6 CalculateWage for total Working Days total working hours
             const int FULL_TIME = 1;
@@ -13,7 +18,7 @@
             const int EMP_RATE_PER_HR = 20;
             int empHrs = 0, empWage = 0, day = 1, totalWage = 0, totalHrs = 0;
             Random myObj = new Random();
-            while(day<=MAX_WORKING_DAYS && totalHrs<=MAX_WORKING_HRS)
+            while (day <= MAX_WORKING_DAYS && totalHrs <= MAX_WORKING_HRS)
             {
                 int empAttendence = myObj.Next(0, 3); //0 or 1 or 2
                 switch (empAttendence)
@@ -32,13 +37,12 @@
                         break;
                 }
                 empWage = empHrs * EMP_RATE_PER_HR;
-                Console.WriteLine("Day {0} Employeewage: {1} totalHrs:{2}", day, empWage,totalHrs);
+                Console.WriteLine("Day {0} Employeewage: {1} totalHrs:{2}", day, empWage, totalHrs);
                 totalWage += empWage;
                 day++;
                 totalHrs += empHrs;
             }
             Console.WriteLine("Total Employeewage for {0} days: {1} and totalHrs:{2}", (day - 1), totalWage, totalHrs);
-            Console.ReadLine();
         }
     }
 
